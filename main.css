@@ -1,0 +1,51 @@
+html {
+font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+
+.logo {
+  font-size: 80px;
+}
+
+.cheers {
+  font-size: 25px;
+}
+
+h5 {
+  background-color: #95bdc3;
+}
+
+td, th {
+  padding: 0 0 0 0;
+}
+
+input[type=text] {
+  margin: 0 0 0 0;
+}
+
+.mashCalc {
+  padding-left: 10.875px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+/* --- Header input text --- */
+.headerRow input[type=text] {
+  font-size: 2vw;
+}
+
+/* --- Yeast Starter Checkbox --- */
+[type="checkbox"]+label:before,
+[type="checkbox"]:not(.filled-in)+label:after {
+  margin: 30px 120px;
+
+}
+
+/* --- Yeast Starter Checkbox Label --- */
+[type="checkbox"]+label {
+  padding-left: 25px;
+  padding-top: 30px;
+  font-size: 1.5rem;
+}
