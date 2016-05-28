@@ -48,3 +48,11 @@ input[type=text] {
   padding-top: 30px;
   font-size: 1.5rem;
 }
+
+.startNewSession{
+  cursor: pointer;
+}
+
+.startNewSession, .question {
+  font-size: 5vw;
+}
