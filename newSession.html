@@ -6,6 +6,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Antic+Slab|Molengo|Comfortaa' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <ul id="dropdown1" class="dropdown-content">
@@ -60,21 +61,18 @@
               <div class="row">
                 <div class="col s12">
                   <table class="striped">
-                    <thead></thead>
+                    <thead>
+                      <th>Type</th>
+                      <th>Amount</th>
+                    </thead>
                     <tbody class="grainsTableBody"></tbody>
                     <tfoot>
                       <tr>
                         <td>
-                          <div>
-                            <a class="addGrains btn-floating">
-                              <i class=" material-icons">add</i>
-                            </a>
-                          </div>
                         </td>
                       </tr>
                     </tfoot>
                   </table>
-
                 </div>
               </div>
 
@@ -181,22 +179,22 @@
                 <div class="col s6">
                   <div class="row">
                     <div class="col s12">
-                      <table class="striped">
-                        <thead>
-                          <tr>
-                            <th>Type/Infusion Amount</th>
-                            <th>Temp</th>
-                            <th>Time</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Single-Infusion</td>
-                            <td>155</td>
-                            <td>60 minutes</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div class="input-field col s12">
+                        <input id="type" type="text">
+                        <label for="type">Type/Infusion Amount</label>
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      <div class="input-field col s12">
+                        <input id="temperature" type="text">
+                        <label for="temperature">Temperaure</label>
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      <div class="input-field col s12">
+                        <input id="time" type="text">
+                        <label for="time">Time</label>
+                      </div>
                     </div>
                   </div>
                   <div class="row">

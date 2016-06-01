@@ -3,8 +3,15 @@ font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
 
 
+
 .logo {
-  font-size: 80px;
+  font-size: 65px;
+  font-family: Antic Slab;
+  text-shadow: 2px 2px #562325;
+}
+
+.question {
+  font-family: Molengo
 }
 
 .cheers {
@@ -23,6 +30,13 @@ input[type=text] {
   margin: 0 0 0 0;
 }
 
+/* Beer style and name input style */
+input:not([type]) {
+  height: 6rem;
+  font-size: 5rem;
+  text-align: center
+}
+
 .mashCalc {
   padding-left: 10.875px;
 }
@@ -34,6 +48,7 @@ input[type=text] {
 /* --- Header input text --- */
 .headerRow input[type=text] {
   font-size: 2vw;
+
 }
 
 /* --- Yeast Starter Checkbox --- */
@@ -51,8 +66,19 @@ input[type=text] {
 
 .startNewSession{
   cursor: pointer;
+
 }
 
 .startNewSession, .question {
   font-size: 5vw;
+  font-family: Molengo
+}
+
+.doneGrainsButton {
+  position: absolute;
+
+}
+
+#brewName, #beerStyle, #date {
+  font-family: Comfortaa
 }
