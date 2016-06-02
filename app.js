@@ -19,9 +19,9 @@
 
   var $mainArea = $('.mainArea');
 
-  var addGrainsDoneButton = $('<div class="row marginBottom"><div class="col s6"><a class="addGrainsButton btn-floating"><i class=" material-icons">\
-      add</i></a></div><div class="col s6"><a class="doneGrainsButton\
-      waves-effect waves-light btn right-align">Done With Grains</a></div></div>');
+  var addGrainsDoneButton = $('<div class="row marginBottom"><a class="addGrainsButton btn-floating"><i class=" material-icons">\
+      add</i></a><a class="doneGrainsButton\
+      waves-effect waves-light btn">Done With Grains</a></div>');
 
   var doneGrainsButton = $('<a class="doneGrainsButton waves-effect waves-light btn">Done With Grains</a>');
 
@@ -45,7 +45,10 @@
 
   var $startNewSession = $('.startNewSession');
 
-  var beer = {};
+  window.beers = JSON.parse(localStorage.getItem('beers')) || [];
+
+  window.beer = {};
+
 
   var grainsArray = [];
 
@@ -61,20 +64,74 @@
 
   var beerStyleData = [];
 
+  var appendRecipeToDropdown = function(newRecipe) {
+      $('#dropdown1').children(0).prepend('<li><a href="#">' + newRecipe.name + '</a></li>');
+  };
+
+  for (var x = 0; x < beers.length; x++) {
+    appendRecipeToDropdown(beers[x]);
+  }
+
+  var addInputValuesToBeerObject = function() {
+    var batchStats = {};
+    var hydrometerReadings = {};
+    var otherNotes = $('#otherNotes').val();
+    var mashSchedule = {};
+    var yeast = {};
+    var cost = {};
+    batchStats.targetOG = $('#targetOG').val();
+    batchStats.targetFG = $('#targetFG').val();
+    batchStats.abv = $('#abv').val();
+    batchStats.ibu = $('#ibu').val();
+    hydrometerReadings.preBoil = $('#preBoil').val();
+    hydrometerReadings.postBoil = $('#postBoil').val();
+    hydrometerReadings.racked = $('#racked').val();
+    hydrometerReadings.final = $('#final').val();
+    mashSchedule.mashType = $('#mashType').val();
+    mashSchedule.mashTemperature = $('#mashTemperature').val();
+    mashSchedule.mashTime = $('#mashTime').val();
+    yeast.type = $('#yeastType').val();
+    yeast.averageAttenuation = $('#averageAttenuation').val();
+    yeast.optimumTemp = $('#optimumTemp').val();
+    yeast.starterCheckbox = $('#starterCheckbox').val();
+    cost.grains = $('#grains').val();
+    cost.hops = $('#hops').val()
+    cost.yeast = $('#yeast').val();
+    cost.other = $('#other').val();
+    beer.batchStats = batchStats;
+    beer.hydrometerReadings = hydrometerReadings;
+    beer.mashSchedule = mashSchedule;
+    beer.yeast = yeast;
+    beer.cost = cost;
+
+    // beers is an []
+    beers.push(beer);
+    appendRecipeToDropdown(beer);
+
+
+
+
+
+
+    localStorage.setItem('beers', JSON.stringify(beers));
+  }
+
   var addSaveButton = function() {
     $belowMainArea.append($('<div class="center-align"><a class="waves-effect waves-light btn-large saveButton center-align"><i class="material-icons right">cloud</i>Save</a></div>'))
+    $('.saveButton').click(addInputValuesToBeerObject)
+
   }
 
   var generateRightColumn = function() {
     $belowMainArea.append($('<div class="row"><div class="col s6"><div class="row">\
       <div class="col s12"><h5>Mash Schedule</h5></div></div></div>\
       <a class="mashCalc" href="https://www.brewersfriend.com/mash">Mash Calculator</a><div class="row"><div class="col s6"><div class="row">\
-      <div class="col s12"><div class="input-field col s12"><input id="type"\
+      <div class="col s12"><div class="input-field col s12"><input id="mashType"\
       type="text"><label for="type">Type/Infusion Amount</label></div></div>\
       <div class="col s6"><div class="input-field col s12">\
-      <input id="temperature" type="text"><label for="temperature">Temperaure\
+      <input id="mashTemperature" type="text"><label for="temperature">Temperature\
       </label></div></div><div class="col s6"><div class="input-field col s12">\
-      <input id="time" type="text"><label for="time">Time</label></div></div>\
+      <input id="mashTime" type="text"><label for="time">Time</label></div></div>\
       </div><div class="row"><div class="col s12"><h5>Yeast</h5></div></div>\
       <div class="row"><div class="col s12"><div class="input-field col s6">\
       <input id="yeastType" type="text"><label for="yeastType">Type</label>\
@@ -82,7 +139,7 @@
        type="text"><label for="averageAttenuation">Average Attenuation</label>\
        </div></div><div class="input-field col s6"><input id="optimumTemp"\
       type="text"><label for="optimumTemp">Optimum Temperature</label></div><div>\
-      <input type="checkbox" id="test6"/><label for="test6">Starter?</label></div>\
+      <input type="checkbox" id="starterCheckbox"/><label for="starterCheckbox">Starter?</label></div>\
       </div></div><div class="row"><div class="col s12"><h5>Cost</h5></div></div>\
       <div class="row"><div class="col s12"><div class="input-field col s6">\
       <input id="grains" type="text"><label for="grains">Grains</label>\
@@ -96,11 +153,6 @@
   }
 
   var generateLeftColumn = function() {
-    beer.targetOG = $('#targetOG').val();
-    beer.targetFG = $('#targetFG').val();
-    beer.abv = $('#abv').val();
-    beer.ibu = $('#ibu').val();
-    beer.preBoil = $('#preBoil').val();
     $belowMainArea.append($('<div class="col s6"><div class="row"><div class="col s12"><h5>BatchStats</h5></div></div><div class="row">\
     <div class="col s12"><div class="input-field col s6"><input id="targetOG"\
     type="text"><label for="targetOG">Target Original Gravity</label>\
@@ -121,7 +173,7 @@
      <label for="final">Final</label></div></div></div><div class="row">\
      <div class="col s12"><h5>Other Notes</h5></div></div><div class="row">\
      <form class="col s12"><div class="row"><div class="input-field col s12">\
-     <textarea id="textarea1" class="materialize-textarea"></textarea></div>\
+     <textarea id="otherNotes" class="materialize-textarea"></textarea></div>\
      </div></form></div></div>')).hide().fadeIn(800);
   };
 
@@ -139,6 +191,7 @@
     }
     generateLeftColumn();
     generateRightColumn();
+    console.log(hopsArray);
   }
 
   var renderHopsTable = function() {
@@ -200,10 +253,11 @@
       grainsArray.push(grainObject);
     }
     addHopsFieldAndButtons();
+    console.log(grainsArray);
   }
 
   var renderGrainsTable = function() {
-    $mainArea.append($('<div class="col s6"><div class="row">\
+    $mainArea.append($('<div class="col s6"><div class="row belowGrainsTableHeader">\
     <div class="col s12"><h5>Grains And Other Ingredients</h5></div></div>\
     <div class="grainsInputBody"</div>\
     <div class="row">\
@@ -255,7 +309,6 @@
 
   var loadGrainsQuestionAndSessionDetails = function() {
     startXHR2();
-    // $('body').css("background", "white").fadeIn(5000);
     beer.name = $('.nameQuestionInput').val()
     $('.nameQuestion').hide();
     $mainArea.prepend($sessionBeerDetails);

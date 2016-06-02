@@ -37,7 +37,22 @@ input[type=text]:focus:not([readonly])  {
 }
 
 .btn-floating {
-  background-color: #4984a1
+  background-color: #4984a1;
+  margin-left: 8px
+}
+
+/* Starter checkbox*/
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #F9C300;
+  border-bottom: 2px solid #F9C300;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.belowGrainsTableHeader {
+  margin-bottom: 0
 }
 
 btn:hover {
@@ -63,6 +78,7 @@ h1 {
 h5 {
   background-color: #4984a1;
   color: white;
+  padding-left: 5px
 }
 
 td, th {
@@ -84,9 +100,6 @@ input:not([type]) {
   padding-left: 10.875px;
 }
 
-.row {
-  margin-bottom: 10px;
-}
 
 /* --- Header input text --- */
 .headerRow input[type=text] {
@@ -121,7 +134,10 @@ input:not([type]) {
   color: white;
   text-shadow: 1px 1px black;
   text-align: center
+}
 
+.dropdown-content li>a {
+  color: #4984a1
 }
 
 .startNewSession:hover {
@@ -142,7 +158,8 @@ input:not([type]) {
 }
 
 .styleQuestionButton, .nameQuestionButton {
-  font-size: 25px
+  font-size: 25px;
+  margin-bottom: 10px
 }
 
 .styleQuestion, .nameQuestion .beerListSelect, .row .col.s12 {
@@ -162,6 +179,14 @@ input:not([type]) {
   margin-bottom: 20px
 }
 
+.doneHopsButton, .doneGrainsButton {
+  float: right;
+}
+
+.doneGrainsButton {
+  margin-right: 8px
+}
+
 .modal-trigger {
   color: #4984a1;
 }
@@ -175,9 +200,8 @@ input:not([type]) {
   background-Color: #8D8D8D;
 }
 
-.doneGrainsButton {
-  position: absolute;
-
+.btn-floating:hover {
+  background-color: #8d8d8d;
 }
 
 .sessionDetails {
