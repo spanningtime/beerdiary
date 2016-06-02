@@ -9,12 +9,13 @@ body {
   background-size: cover;
 }
 
-
+#beerOutline {
+  margin-left: 5px;
+}
 .logo {
   font-size: 65px;
   font-family: Antic Slab;
   text-shadow: 2px 2px black;
-  padding-left: 15px;
 }
 
 .logo:hover {
@@ -25,17 +26,18 @@ nav {
   background-color: #F9C300
 }
 
-input:not([type]):focus:not([readonly]) {
-  border-bottom: 1px solid #DACC28;
-  box-shadow: 0 1px 0 0 #CCC7BA;
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly])  {
+  border-bottom: 1px solid #4984a1;
+  box-shadow: 0 1px 0 0 #4984a1;
 }
 
-.btn {
-  background-color: #000;
+.btn, .btn-large {
+  background-color: #4984a1;
 }
 
-input:not([type]) {
-  color: #8D8D8D;
+.btn-floating {
+  background-color: #4984a1
 }
 
 btn:hover {
@@ -52,8 +54,15 @@ btn:hover {
   padding-right: 25px;
 }
 
+h1 {
+  font-size: 3vw;
+  color: #4984a1;
+  font-style: italic;
+}
+
 h5 {
-  background-color: #95bdc3;
+  background-color: #4984a1;
+  color: white;
 }
 
 td, th {
@@ -66,8 +75,9 @@ input[type=text] {
 
 /* Beer style and name input style */
 input:not([type]) {
-  height: 6rem;
-  font-size: 5rem;
+  color: #8D8D8D;
+  height: 4vw;
+  font-size: 4vw;
 }
 
 .mashCalc {
@@ -97,15 +107,25 @@ input:not([type]) {
   font-size: 1.5rem;
 }
 
-.startNewSession{
+.styleQuestion, .nameQuestion, .grainsQuestion, .hopsQuestion{
+  font-size: 4vw;
+  font-family: Molengo;
+  /*color: white;*/
+}
+
+.startNewSession {
   cursor: pointer;
+  font-family: Molengo;
+  font-weight: Bold;
+  font-size: 5.5vw;
+  color: white;
+  text-shadow: 1px 1px black;
+  text-align: center
 
 }
 
-.startNewSession, .styleQuestion, .nameQuestion, .grainsQuestion, .hopsQuestion{
-  font-size: 5vw;
-  font-family: Molengo;
-  /*color: white;*/
+.startNewSession:hover {
+  font-size: 6vw
 }
 
 .beerListItem {
@@ -114,7 +134,7 @@ input:not([type]) {
 }
 
 .beerListItem:hover {
-  background-color: yellow;
+  background-color: #F9C300;
 }
 
 .beerListValues {
@@ -138,7 +158,7 @@ input:not([type]) {
   width: 97%;
 }
 
-.marginBottom, .doneHopsButton, .addHopsButton, .belowMainArea {
+.marginBottom, .doneHopsButton, .addHopsButton, .saveButton {
   margin-bottom: 20px
 }
 
@@ -146,7 +166,12 @@ input:not([type]) {
   color: #4984a1;
 }
 
-.btn:hover {
+.modal-trigger:hover {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.btn:hover, .btn-large:hover {
   background-Color: #8D8D8D;
 }
 

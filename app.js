@@ -11,9 +11,9 @@
 
 
 
-  var styleQuestion = $('<section class="styleQuestion question">What style of beer are you making?<br><input class="styleQuestionInput"></input><br><a class="waves-effect waves-light btn styleQuestionButton">Next</a></section>');
+  var styleQuestion = $('<section class="styleQuestion question">What style of beer are you brewing?<br><input class="styleQuestionInput"></input><br><a class="waves-effect waves-light btn styleQuestionButton">Next</a></section>');
 
-  var nameQuestion = $('<section class= nameQuestion question">What do you want to name your beer?<br><input class="nameQuestionInput"></input><br><a class="waves-effect waves-light btn nameQuestionButton">Next</a></section>')
+  var nameQuestion = $('<section class= nameQuestion question">Give your beer a name!<br><input class="nameQuestionInput"></input><br><a class="waves-effect waves-light btn nameQuestionButton">Next</a></section>')
 
   var $grainsQuestion = $('<section class="center-align grainsQuestion question">Enter your grain bill.</section>')
 
@@ -36,7 +36,7 @@
       <div class="col s4 center-align sessionDetails" id="date"></div></div>');
 
   var $beerListSelect = $('<div class="col s12 beerListSelect">\
-    <h1>Select the correct beer style</h1>\
+    <h1>Select the correct style</h1>\
     <ul id="#beerList"></ul></div>');
 
   var $beerListUl = $beerListSelect.children('ul')
@@ -60,6 +60,10 @@
   var beerId = '';
 
   var beerStyleData = [];
+
+  var addSaveButton = function() {
+    $belowMainArea.append($('<div class="center-align"><a class="waves-effect waves-light btn-large saveButton center-align"><i class="material-icons right">cloud</i>Save</a></div>'))
+  }
 
   var generateRightColumn = function() {
     $belowMainArea.append($('<div class="row"><div class="col s6"><div class="row">\
@@ -87,6 +91,8 @@
        s6"><input id="yeast" type="text"><label for="yeast">Yeast</label></div>\
       </div><div><div class="input-field col s6"><input id="other" type="text">\
       <label for="other">Other</label></div></div></div></div></div></div>')).hide().fadeIn(800);
+      addSaveButton();
+
   }
 
   var generateLeftColumn = function() {
@@ -134,22 +140,6 @@
     generateLeftColumn();
     generateRightColumn();
   }
-
-// ****** FIRST ROW ******
-// $('.hopsRow').eq(0).children().eq(0).children().eq(0).val()
-// "Cascade"
-// $('.hopsRow').eq(0).children().eq(2).children().eq(0).val()
-// "10%"
-// $('.hopsRow').eq(0).children().eq(1).children().eq(0).val()
-// "10oz"
-
-// ******* SECOND ROW *******
-// $('.hopsRow').eq(1).children().eq(1).children().eq(0).val()
-// "Summit"
-// $('.hopsRow').eq(1).children().eq(3).children().eq(0).val()
-// "5%"
-// $('.hopsRow').eq(1).children().eq(2).children().eq(0).val()
-// "5oz"
 
   var renderHopsTable = function() {
     $mainArea.append('<div class="col s6"><h5>Hops!</h5></div></div><div class="row"><div class="col s6">\
@@ -331,22 +321,22 @@
 
 
   var loadStyleQuestion = function() {
+    beer.date = new Date();
     // Append the Style Questions HTML to the page
     $mainArea.append(styleQuestion).hide().fadeIn(1000);
     // Establish event listener for new button
     $('.styleQuestionButton').click(startXHR);
   }
 
-  var hideStartSession = function() {
-    $startNewSession.hide();
-  }
+  // var hideStartSession = function() {
+  //   $startNewSession.hide();
+  // }
+  //
+  // $startNewSession.click(function() {
+  //   hideStartSession();
+  // });
 
-  $startNewSession.click(function() {
-    beer.date = new Date();
-    hideStartSession();
-    loadStyleQuestion();
-  });
-
+  loadStyleQuestion();
 
 
 

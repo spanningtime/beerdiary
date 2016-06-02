@@ -13,265 +13,38 @@
       <li><a href="#!">Oil Can Stout 5.3.16</a></li>
       <li></li>
       <li class="divider"></li>
-      <li></li>
+      <li><a href="index.html">Home</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
+        <img id="beerOutline" src="beerOutline.png">
         <a class="dropdown-button logo" href="#!" data-activates="dropdown1">BEER DIARY,</a>
         <ul class="right">
-          <li class="cheers">Cheers, William!</li>
+          <li class="cheers">Cheers!</li>
       <!-- Dropdown Trigger -->
         </ul>
+        <img src="pencil.png">
       </div>
     </nav>
 
+
+
     <div class="container">
       <div class="row">
-        <div class="col s12">
-          <div class="row headerRow">
-            <div class="col s4">
-              <div class="input-field">
-                <input id="brew_name" type="text">
-                <label for="brew_name">Brew Name</label>
-              </div>
-            </div>
-            <div class="col s4">
-              <div class="input-field">
-                <input id="beer_style" type="text">
-                <label for="beer_style">Beer Style</label>
-              </div>
-            </div>
-            <div class="col s4">
-              <div class="input-field">
-                <input id="brew_date" type="date" class="datepicker">
-                <label for="brew_date">Brew Date</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col s6">
-              <div class="row">
-                <div class="col s12">
-                  <h5>Grains & Other Ingredients!</h5>
-                </div>
-              </div>
-              <div class="grainsInputBody">
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <table class="striped">
-                    <thead>
-                      <th>Type</th>
-                      <th>Amount</th>
-                    </thead>
-                    <tbody class="grainsTableBody"></tbody>
-                    <tfoot>
-                      <tr>
-                        <td>
-                        </td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12">
-                  <h5>Hops!</h5>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <table class="striped">
-                    <thead>
-                      <tr>
-                        <th>Type</th>
-                        <th>Alpha Acids</th>
-                        <th>Amount</th>
-                      </tr>
-                    </thead>
-                      <tr>
-                        <td>Cluster</td>
-                        <td>7.00%</td>
-                        <td>1.00 oz</td>
-                      </tr>
-                      <tr>
-                        <td>Fuggles (Dry Hop)</td>
-                        <td>4.50%</td>
-                        <td>1.00 oz</td>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12">
-                  <h5>Batch Stats</h5>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="input-field col s6">
-                    <input id="targetOG" type="text">
-                    <label for="targetOG">Target Original Gravity</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="targetFG" type="text">
-                    <label for="targetFG">Target Final Gravity</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="input-field col s6">
-                    <input id="abv" type="text">
-                    <label for="abv">ABV</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="ibu" type="text">
-                    <label for="ibu">IBUs</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12">
-                  <h5>Hydrometer Readings</h5>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="input-field col s6">
-                    <input id="preBoil" type="text">
-                    <label for="preBoil">Pre-Boil</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="postBoil" type="text">
-                    <label for="PostBoil">Post-Boil</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="input-field col s6">
-                    <input id="racked" type="text">
-                    <label for="racked">Racked</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="final" type="text">
-                    <label for="final">Final</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s6">
-                <div class="row">
-                  <div class="col s12">
-                    <h5>Mash Schedule</h5>
-                  </div>
-                </div>
-              </div>
-              <a class="mashCalc" href="https://www.brewersfriend.com/mash">Mash Calculator</a>
-              <div class="row">
-                <div class="col s6">
-                  <div class="row">
-                    <div class="col s12">
-                      <div class="input-field col s12">
-                        <input id="type" type="text">
-                        <label for="type">Type/Infusion Amount</label>
-                      </div>
-                    </div>
-                    <div class="col s6">
-                      <div class="input-field col s12">
-                        <input id="temperature" type="text">
-                        <label for="temperature">Temperaure</label>
-                      </div>
-                    </div>
-                    <div class="col s6">
-                      <div class="input-field col s12">
-                        <input id="time" type="text">
-                        <label for="time">Time</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col s12">
-                      <h5>Yeast</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col s12">
-                      <div class="input-field col s6">
-                        <input id="yeastType" type="text">
-                        <label for="yeastType">Type</label>
-                      </div>
-                      <div>
-                        <div class="input-field col s6">
-                          <input id="averageAttenuation" type="text">
-                          <label for="averageAttenuation">Average Attenuation</label>
-                        </div>
-                      </div>
-                      <div class="input-field col s6">
-                        <input id="optimumTemp" type="text">
-                        <label for="optimumTemp">Optimum Temperature</label>
-                      </div>
-                      <div>
-                        <input type="checkbox" id="test6"/><label for="test6">Starter?</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col s12">
-                      <h5>Cost</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col s12">
-                      <div class="input-field col s6">
-                        <input id="grains" type="text">
-                        <label for="grains">Grains</label>
-                      </div>
-                      <div>
-                        <div class="input-field col s6">
-                          <input id="hops" type="text">
-                          <label for="hops">Hops</label>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="input-field col s6">
-                          <input id="yeast" type="text">
-                          <label for="yeast">Yeast</label>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="input-field col s6">
-                          <input id="other" type="text">
-                          <label for="other">Other</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col s12">
-                      <h5>Other Notes</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-
-            </div>
+        <div class="col s12 mainArea">
         </div>
+        <div class="belowMainArea col s12">
+        </div>
+      </div>
+    </div>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+
+        <p class="modalParagraph"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
 
