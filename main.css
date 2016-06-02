@@ -4,10 +4,42 @@ font-family: GillSans, Calibri, Trebuchet, sans-serif;
 
 
 
+body {
+  background: url("food-cold-wood-hand.jpg");
+  background-size: cover;
+}
+
+
 .logo {
   font-size: 65px;
   font-family: Antic Slab;
-  text-shadow: 2px 2px #562325;
+  text-shadow: 2px 2px black;
+  padding-left: 15px;
+}
+
+.logo:hover {
+  text-shadow: 3px 3px black
+}
+
+nav {
+  background-color: #F9C300
+}
+
+input:not([type]):focus:not([readonly]) {
+  border-bottom: 1px solid #DACC28;
+  box-shadow: 0 1px 0 0 #CCC7BA;
+}
+
+.btn {
+  background-color: #000;
+}
+
+input:not([type]) {
+  color: #8D8D8D;
+}
+
+btn:hover {
+  background-color: #8D8D8D;
 }
 
 .question {
@@ -16,6 +48,8 @@ font-family: GillSans, Calibri, Trebuchet, sans-serif;
 
 .cheers {
   font-size: 25px;
+  text-shadow: 1px 1px black;
+  padding-right: 25px;
 }
 
 h5 {
@@ -34,7 +68,6 @@ input[type=text] {
 input:not([type]) {
   height: 6rem;
   font-size: 5rem;
-  text-align: center
 }
 
 .mashCalc {
@@ -69,9 +102,52 @@ input:not([type]) {
 
 }
 
-.startNewSession, .question {
+.startNewSession, .styleQuestion, .nameQuestion, .grainsQuestion, .hopsQuestion{
   font-size: 5vw;
-  font-family: Molengo
+  font-family: Molengo;
+  /*color: white;*/
+}
+
+.beerListItem {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.beerListItem:hover {
+  background-color: yellow;
+}
+
+.beerListValues {
+  font-size: 30px
+}
+
+.styleQuestionButton, .nameQuestionButton {
+  font-size: 25px
+}
+
+.styleQuestion, .nameQuestion .beerListSelect, .row .col.s12 {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.mainArea {
+  margin-top: 10%
+}
+
+.row .col.s12 {
+  width: 97%;
+}
+
+.marginBottom, .doneHopsButton, .addHopsButton, .belowMainArea {
+  margin-bottom: 20px
+}
+
+.modal-trigger {
+  color: #4984a1;
+}
+
+.btn:hover {
+  background-Color: #8D8D8D;
 }
 
 .doneGrainsButton {
@@ -79,6 +155,11 @@ input:not([type]) {
 
 }
 
-#brewName, #beerStyle, #date {
-  font-family: Comfortaa
+.sessionDetails {
+  font-family: Comfortaa;
+  color: #F9C300
 }
+
+/*.belowMainArea, .tableBackground, .hopsRow {
+  background-color: white;
+}*/
