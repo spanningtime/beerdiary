@@ -1,5 +1,6 @@
 (function () {
 
+
   $(".dropdown-button").dropdown();
 
 
@@ -63,6 +64,7 @@
   var beerId = '';
 
   var beerStyleData = [];
+
 
   var appendRecipeToDropdown = function(newRecipe) {
       $('#dropdown1').children(0).prepend('<li><a href="#">' + newRecipe.name + '</a></li>');
@@ -292,6 +294,9 @@
     var $xhr = $.getJSON('http://cors-anywhere.herokuapp.com/api.brewerydb.com/v2/style/' + beerId + '?key=90d1c30e19a750d723e5318a32f983f3');
 
     $xhr.done(function(data) {
+      if ($xhr.status !== 200) {
+          return;
+      }
       var obj = {};
       obj.description = data.data.description;
       obj.abvMin = data.data.abvMin;
@@ -352,7 +357,6 @@
   }
 
   var startXHR = function() {
-    $('.styleQuestionButton').hide();
     beer.style = $('.styleQuestionInput').val();
     var $xhr = $.getJSON('http://cors-anywhere.herokuapp.com/api.brewerydb.com/v2/search/style?q=' + beer.style + '&key=90d1c30e19a750d723e5318a32f983f3');
 
@@ -366,6 +370,7 @@
         obj.id = data.data[x].id
         beerStyleArray.push(obj);
       }
+      $('.styleQuestionButton').hide();
       console.log(beerStyleArray);
       createBeerListSelect();
     });
@@ -381,13 +386,6 @@
     $('.styleQuestionButton').click(startXHR);
   }
 
-  // var hideStartSession = function() {
-  //   $startNewSession.hide();
-  // }
-  //
-  // $startNewSession.click(function() {
-  //   hideStartSession();
-  // });
 
   loadStyleQuestion();
 

@@ -1,6 +1,6 @@
-html {
+/*html {
 font-family: GillSans, Calibri, Trebuchet, sans-serif;
-}
+}*/
 
 
 
@@ -11,6 +11,7 @@ body {
 
 #beerOutline {
   margin-left: 5px;
+  padding-top: 23px;
 }
 .logo {
   font-size: 65px;
@@ -18,8 +19,34 @@ body {
   text-shadow: 2px 2px black;
 }
 
+.toast {
+  background-color: #F9C300;
+  color: black
+}
+
+/*Input label color*/
+input[type=text]:focus:not([readonly])+label {
+  color: #F9C300
+}
+
 .logo:hover {
   text-shadow: 3px 3px black
+}
+
+.tagline {
+  color: white;;
+  font-family: Antic Slab;
+  font-size: 30px;
+  text-shadow: 1px 1px black;
+  background-color: #F9C300;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 40px
+}
+
+/*Recues space between nav bar and content below*/
+.belowNav {
+  margin-top: -3rem;
 }
 
 nav {
@@ -64,9 +91,10 @@ btn:hover {
 }
 
 .cheers {
-  font-size: 25px;
+  font-size: 35px;
   text-shadow: 1px 1px black;
   padding-right: 25px;
+  padding-top: 20px
 }
 
 h1 {
