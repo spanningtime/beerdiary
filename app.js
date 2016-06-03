@@ -67,8 +67,12 @@
 
 
   var appendRecipeToDropdown = function(newRecipe) {
-      $('#dropdown1').children(0).prepend('<li><a href="#">' + newRecipe.name + '</a></li>');
+      $('#dropdown1').children(0).prepend('<li><a id="toast" href="#">' + newRecipe.name + '</a></li>');
+      $('#dropdown1').children().click(function() {
+        Materialize.toast('Coming soon!', 4000)
+      });
   };
+
 
   for (var x = 0; x < beers.length; x++) {
     appendRecipeToDropdown(beers[x]);
@@ -197,7 +201,7 @@
   }
 
   var renderHopsTable = function() {
-    $mainArea.append('<div class="col s6"><h5>Hops!</h5></div></div><div class="row"><div class="col s6">\
+    $mainArea.append('<div class="col s6"><h5>Hops</h5></div></div><div class="row"><div class="col s6">\
     <table class="striped"><thead><tr><th>Type</th><th>Alpha Acids</th>\
     <th>Amount</th></tr></thead><tbody class="hopsTableBody"></tbody></table></div></div>')
     addHopsToTable();
@@ -314,6 +318,7 @@
 
   var loadGrainsQuestionAndSessionDetails = function() {
     startXHR2();
+    Materialize.toast('Click the beer style for details', 4000)
     beer.name = $('.nameQuestionInput').val()
     $('.nameQuestion').hide();
     $mainArea.prepend($sessionBeerDetails);
