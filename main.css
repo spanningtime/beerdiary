@@ -4,20 +4,15 @@ body {
   background-size: cover;
 }
 
+/* Navigation Bar */
 nav {
   background-color: #F9C300
-}
-
-/* Beer icon (moved all navbar content down accidentally but I liked it)*/
-#beerOutline {
-  margin-left: 5px;
-  padding-top: 23px;
 }
 
 /* Navbar BEER DIARY logo styles*/
 .logo {
   font-size: 65px;
-  font-family: Antic Slab;
+  font-family: 'Antic Slab';
   text-shadow: 2px 2px black;
 }
 
@@ -26,8 +21,8 @@ nav {
 }
 
 .tagline {
-  color: white;;
-  font-family: Antic Slab;
+  color: white;
+  font-family: 'Antic Slab';
   font-size: 30px;
   text-shadow: 1px 1px black;
   background-color: #F9C300;
@@ -36,12 +31,19 @@ nav {
   padding-left: 40px
 }
 
+/* Beer icon (moved all navbar content down accidentally but I liked it)*/
+#beerOutline {
+  margin-left: 5px;
+  padding-top: 23px;
+}
+
 /* Cheers Font and placement */
 .cheers {
   font-size: 35px;
   text-shadow: 1px 1px black;
   padding-right: 25px;
-  padding-top: 20px
+  padding-top: 20px;
+  color: white
 }
 
 .sessionDetails {
@@ -156,9 +158,9 @@ input:not([type]) {
   font-size: 4vw;
 }
 
-/*  */
+/* Padding to align mashCalc link with Mash Schedule inputs */
 .mashCalc {
-  padding-left: 10.875px;
+  padding-left: 23.875px;
 }
 
 
