@@ -12,6 +12,10 @@ const app = express();
 
 app.disable('x-powered-by');
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 if (process.env.NODE_ENV !== 'test') {
   const morgan = require('morgan');
   app.use(morgan('short'));

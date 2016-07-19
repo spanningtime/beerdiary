@@ -8,7 +8,7 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/addressing_test'
+    connection: 'postgres://localhost/beerdiary_test'
   },
 
   production: {
