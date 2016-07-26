@@ -10,7 +10,6 @@ const router = express.Router();
 const { camelizeKeys, decamelizeKeys } = require('humps');
 const knex = require('../knex');
 const bcrypt = require('bcrypt-as-promised');
-const ev = require('express-validation');
 
 router.post('/users', (req, res, next) => {
   const {
