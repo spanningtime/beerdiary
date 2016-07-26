@@ -7,6 +7,7 @@ const port = process.env.PORT || 8001
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
+const users = require('./routes/users');
 
 const app = express();
 
@@ -29,6 +30,8 @@ app.use(cookieSession({
 }));
 
 app.use(express.static(path.join('public')));
+
+app.use(users);
 
 app.use((_req, res) => {
   res.sendStatus(404);
